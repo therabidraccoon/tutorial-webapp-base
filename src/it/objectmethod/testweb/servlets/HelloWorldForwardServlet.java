@@ -13,12 +13,12 @@ public class HelloWorldForwardServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 		String nome = req.getParameter("boh");
+		String ditapiedi = req.getParameter("ditapie");
 
 		nome = nome + " è un bel nome.";
 
 		req.setAttribute("tostapane", nome);
-
-		req.setAttribute("ditapiedi", 10);
+		req.setAttribute("ditapiedi", Integer.parseInt(ditapiedi));
 		req.getRequestDispatcher("nonhoidee").forward(req, resp);
 	}
 
